@@ -31,17 +31,18 @@ export type InitialPlanOptions = "" | "starter" | "pro";
 const leftside = (
   <Flex direction="column" justify="between" height="100%" p="6">
     <Box>
-      <a href="https://www.growthbook.io" target="_blank" rel="noreferrer">
-        <img
-          src="/logo/growth-book-logo-white.svg"
-          style={{ maxWidth: "150px" }}
-          alt="GrowthBook"
-        />
-      </a>
+      <img
+        src="/logo/shadyy-brand.png"
+        style={{ maxWidth: "170px", maxHeight: "64px", objectFit: "contain" }}
+        alt="Shadyy"
+      />
     </Box>
     <Box>
       <h1 className="title h1">Confirm your plan</h1>
       <p>You can change this later in your account settings.</p>
+    </Box>
+    <Box>
+      <Text color="text-low">© 2026 Shadyy</Text>
     </Box>
   </Flex>
 );
@@ -256,9 +257,9 @@ const SelectInitialPlan: FC = () => {
       )}
       {step >= 4 && (
         <div style={{ maxWidth: "500px" }}>
-          <h2 className="h3 mb-1">Welcome to GrowthBook Pro!</h2>
+          <h2 className="h3 mb-1">Welcome to Shadyy Pro!</h2>
           <p className="text-muted mb-3">
-            You&apos;re all set! Go to your GrowthBook dashboard to start your
+            You&apos;re all set! Go to your Shadyy dashboard to start your
             setup.
           </p>
           <Button color="primary" onClick={completeFlow} disabled={loading}>

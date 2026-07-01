@@ -141,10 +141,20 @@ export default function PublicExperimentPage(props: PublicExperimentPageProps) {
   return (
     <div className={`public pb-2 ${isBandit ? "bandit" : "experiment"}`}>
       <Head>
-        <title>{experiment?.name ? `${experiment.name} | GrowthBook` : "Experiment not found | GrowthBook"}</title>
+        <title>
+          {experiment?.name
+            ? `${experiment.name} | Shadyy`
+            : "Experiment not found | Shadyy"}
+        </title>
         <meta
           property="og:title"
-          content={experiment?.name ? (`${isBandit ? "Bandit" : "Experiment"}: ${experiment?.name} | GrowthBook`) : "Experiment not found | GrowthBook"}
+          content={
+            experiment?.name
+              ? `${isBandit ? "Bandit" : "Experiment"}: ${
+                  experiment?.name
+                } | Shadyy`
+              : "Experiment not found | Shadyy"
+          }
         />
         <meta
           property="og:description"

@@ -74,6 +74,13 @@ $sidebarwidth: 240px;
   width: 100%;
 }
 
+.brandLogo {
+  width: 150px;
+  max-height: 42px;
+  object-fit: contain;
+  margin-left: 4px;
+}
+
 .dropdownItemIconColor {
   &:focus {
     svg {

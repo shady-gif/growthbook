@@ -110,7 +110,7 @@ export default function SetupFlow() {
       <PageHead breadcrumb={[{ display: "< Exit Setup", href: exitHref }]} />
       {step < 2 && (
         <h1 style={{ padding: "0px 65px" }}>
-          Setup GrowthBook for {organization.name}
+          Setup Shadyy for {organization.name}
         </h1>
       )}
       <PagedModal

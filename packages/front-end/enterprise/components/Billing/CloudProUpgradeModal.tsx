@@ -244,10 +244,10 @@ export default function CloudProUpgradeModal({ close, closeParent }: Props) {
         showHeaderCloseButton={false}
       >
         <div className="container-fluid dashboard p-3 ">
-          <h3>Welcome to GrowthBook Pro!</h3>
+          <h3>Welcome to Shadyy Pro!</h3>
           <span>
             You&apos;re all set! Your organization now has access to all
-            GrowthBook Pro features.
+            Shadyy Pro features.
           </span>
         </div>
       </Modal>

@@ -121,16 +121,14 @@ const CreateOrJoinOrganization: FC<{
   const leftside = (
     <Flex direction="column" justify="between" height="100%" p="6">
       <Box>
-        <a href="https://www.growthbook.io" target="_blank" rel="noreferrer">
-          <img
-            src="/logo/growth-book-logo-white.svg"
-            style={{ maxWidth: "150px" }}
-            alt="GrowthBook"
-          />
-        </a>
+        <img
+          src="/logo/shadyy-brand.png"
+          style={{ maxWidth: "170px", maxHeight: "64px", objectFit: "contain" }}
+          alt="Shadyy"
+        />
       </Box>
       <Box>
-        <h1 className="title h1">Welcome to GrowthBook!</h1>
+        <h1 className="title h1">Welcome to Shadyy!</h1>
         {showCreate || showJoin ? (
           <p>
             You aren&apos;t part of an organization yet. <br />
@@ -144,6 +142,9 @@ const CreateOrJoinOrganization: FC<{
           <p>Ask your admin to invite you to the organization.</p>
         )}
       </Box>
+      <Box>
+        <span className="text-muted">© 2026 Shadyy</span>
+      </Box>
     </Flex>
   );
 
@@ -152,7 +153,7 @@ const CreateOrJoinOrganization: FC<{
 
     return `We found ${
       orgs.length === 1 ? "your organization" : "possible organizations for you"
-    } on GrowthBook!`;
+    } on Shadyy!`;
   };
 
   const subtitleCopy = (orgs) => {
@@ -393,8 +394,7 @@ const CreateOrJoinOrganization: FC<{
           <div>
             <h3 className="h2">Invitation Required</h3>
             <div className="alert alert-danger">
-              You must be invited by an administrator in order to use
-              GrowthBook.
+              You must be invited by an administrator in order to use Shadyy.
             </div>
           </div>
         )}{" "}

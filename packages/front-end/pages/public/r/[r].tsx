@@ -84,15 +84,15 @@ export default function ReportPage(props: ReportPageProps) {
       <Head>
         <title>
           {report?.title
-            ? `${report.title} | GrowthBook`
-            : "Report not found | GrowthBook"}
+            ? `${report.title} | Shadyy`
+            : "Report not found | Shadyy"}
         </title>
         <meta
           property="og:title"
           content={
             report?.title
-              ? `Report: ${report.title} | GrowthBook`
-              : "Report not found | GrowthBook"
+              ? `Report: ${report.title} | Shadyy`
+              : "Report not found | Shadyy"
           }
         />
         <meta

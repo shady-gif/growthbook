@@ -241,9 +241,9 @@ export default function ConnectionDiagram({
           title={
             <>
               <img
-                src="/logo/growthbook-logo.png"
+                src="/logo/shadyy-brand.png"
                 style={{ width: 130 }}
-                alt="GrowthBook"
+                alt="Shadyy"
               />
               <span style={{ verticalAlign: "sub", marginLeft: 3 }}>API</span>
             </>

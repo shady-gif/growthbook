@@ -601,9 +601,7 @@ export const AuthProvider: React.FC<{
           }
         }}
       >
-        <p>
-          Error connecting to the GrowthBook API at <code>{getApiHost()}</code>.
-        </p>
+        <p>Error connecting to the Shadyy API at <code>{getApiHost()}</code>.</p>
         <p>Received the following error message:</p>
         <div className="alert alert-danger">{getDetailedError(initError)}</div>
       </Modal>
@@ -622,7 +620,7 @@ export const AuthProvider: React.FC<{
         autoCloseOnSubmit={false}
       >
         <h3>You&apos;ve been logged out</h3>
-        <p>Sign back in to keep using GrowthBook</p>
+        <p>Sign back in to keep using Shadyy</p>
       </Modal>
     );
   }

@@ -674,7 +674,7 @@ const Admin: FC = () => {
           close={() => setOrgModalOpen(false)}
         />
       )}
-      <h1>GrowthBook Admin</h1>
+      <h1>Shadyy Admin</h1>
       {!isCloud() && (
         <>
           <div

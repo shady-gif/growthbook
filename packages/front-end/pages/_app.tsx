@@ -187,7 +187,8 @@ function App({
         }
       `}</style>
       <Head>
-        <title>GrowthBook</title>
+        <title>Shadyy</title>
+        <link rel="icon" href="/logo/shadyy-mark.png" />
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <AppearanceUIThemeProvider>
@@ -253,7 +254,7 @@ function App({
           ) : error ? (
             <Container mt="9">
               <Callout status="error">
-                Error Initializing GrowthBook:
+                Error Initializing Shadyy:
                 <br />
                 <br />
                 {error}

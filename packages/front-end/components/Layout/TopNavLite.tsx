@@ -168,27 +168,15 @@ export default function TopNavLite({ pageTitle }: { pageTitle?: string }) {
   return (
     <div className={`navbar ${styles.topbarlite}`}>
       <Head>
-        <title>GrowthBook</title>
+        <title>Shadyy</title>
       </Head>
       <div style={{ width: 240 }}>
         <Link href="/">
-          {theme === "dark" ? (
-            <>
-              <img
-                alt="GrowthBook"
-                src="/logo/growth-book-logo-white.svg"
-                style={{ width: 160, height: 30, marginLeft: 4, marginTop: -8 }}
-              />
-            </>
-          ) : (
-            <>
-              <img
-                alt="GrowthBook"
-                src="/logo/growth-book-logo-color.svg"
-                style={{ width: 160, height: 30, marginLeft: 4, marginTop: -8 }}
-              />
-            </>
-          )}
+          <img
+            alt="Shadyy"
+            src="/logo/shadyy-brand.png"
+            className={styles.brandLogo}
+          />
         </Link>
       </div>
       {renderTitleOrBreadCrumb()}

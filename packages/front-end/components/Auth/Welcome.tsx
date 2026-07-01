@@ -56,8 +56,8 @@ export default function Welcome({
   }, [pathname]);
 
   const welcomeMsg = [
-    <>Welcome to GrowthBook!</>,
-    <>Hello! Welcome to GrowthBook</>,
+    <>Welcome to Shadyy!</>,
+    <>Hello! Welcome to Shadyy</>,
     "Hello there, Welcome!",
     "Hey there!",
   ];
@@ -121,7 +121,7 @@ export default function Welcome({
     ) : state === "firsttime" ? (
       <>
         <p>
-          Getting started with GrowthBook only takes a few minutes. <br />
+          Getting started with Shadyy only takes a few minutes. <br />
           To start, we&apos;ll need a bit of information about you.
         </p>
       </>
@@ -135,13 +135,11 @@ export default function Welcome({
   const leftside = (
     <Flex direction="column" justify="between" height="100%" p="6">
       <Box>
-        <a href="https://www.growthbook.io" target="_blank" rel="noreferrer">
-          <img
-            src="/logo/growth-book-logo-white.svg"
-            style={{ maxWidth: "150px" }}
-            alt="GrowthBook"
-          />
-        </a>
+        <img
+          src="/logo/shadyy-brand.png"
+          style={{ maxWidth: "170px", maxHeight: "64px", objectFit: "contain" }}
+          alt="Shadyy"
+        />
       </Box>
       <Box>
         {hero?.headline ? (
@@ -196,6 +194,11 @@ export default function Welcome({
             {welcomeContent}
           </Box>
         )}
+      </Box>
+      <Box>
+        <Text as="span" size="small" color="text-low">
+          © 2026 Shadyy
+        </Text>
       </Box>
     </Flex>
   );
@@ -256,7 +259,7 @@ export default function Welcome({
                 Welcome back
               </Heading>
               <Text as="span" size="medium" weight="regular">
-                Sign in to your GrowthBook account
+                Sign in to your Shadyy account
               </Text>
             </Flex>
           )}

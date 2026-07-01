@@ -7,17 +7,17 @@ export default function DataSourceDiagram({
 }) {
   return (
     <div className={className}>
-      <h3 className="mb-2">How A/B Test Analysis Works at GrowthBook</h3>
+      <h3 className="mb-2">How A/B Test Analysis Works at Shadyy</h3>
       <ol>
         <li>
           Track events from your app into your data warehouse, just like you
           normally would
         </li>
         <li>
-          Connect GrowthBook to your warehouse and define metrics using SQL
+          Connect Shadyy to your warehouse and define metrics using SQL
         </li>
         <li>
-          GrowthBook queries your warehouse and uses a stats engine to analyze
+          Shadyy queries your warehouse and uses a stats engine to analyze
           experiment results
         </li>
       </ol>
@@ -62,12 +62,12 @@ export default function DataSourceDiagram({
           style={{ maxWidth: 325 }}
         >
           <img
-            src="/logo/Logo-mark.png"
+            src="/logo/shadyy-mark.png"
             style={{ width: 40 }}
-            alt="GrowthBook"
+            alt="Shadyy"
           />
           <div className="col">
-            <h5 className="mb-0">GrowthBook</h5>
+            <h5 className="mb-0">Shadyy</h5>
           </div>
         </div>
       </div>

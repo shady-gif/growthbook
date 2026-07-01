@@ -415,7 +415,7 @@ const TopNav: FC<{
   return (
     <>
       <Head>
-        <title>{pageTitle ? `${pageTitle} | GrowthBook` : "GrowthBook"}</title>
+        <title>{pageTitle ? `${pageTitle} | Shadyy` : "Shadyy"}</title>
       </Head>
       {editUserOpen && (
         <Modal
@@ -462,9 +462,9 @@ const TopNav: FC<{
           ) : showLogo ? (
             <div>
               <img
-                alt="GrowthBook"
-                src="/logo/growthbook-logo.png"
-                style={{ height: 40 }}
+                alt="Shadyy"
+                src="/logo/shadyy-brand.png"
+                style={{ height: 40, objectFit: "contain" }}
               />
             </div>
           ) : null}
@@ -486,11 +486,11 @@ const TopNav: FC<{
               onClick={toggleAgentPanel}
               aria-label={
                 agentOpen
-                  ? "Close GrowthBook AI assistant"
-                  : "Open GrowthBook AI assistant"
+                  ? "Close Shadyy AI assistant"
+                  : "Open Shadyy AI assistant"
               }
               aria-pressed={agentOpen}
-              title="Ask GrowthBook AI"
+              title="Ask Shadyy AI"
               className={`nav-link ${styles.agentTrigger} ${
                 agentOpen ? styles.agentTriggerActive : ""
               }`}

@@ -163,7 +163,7 @@ const Layout = (): React.ReactElement => {
                 href="/"
                 aria-current="page"
                 className="app-sidebar-logo active"
-                title="GrowthBook Home"
+                title="Shadyy Home"
                 onClick={() => setOpen(false)}
               >
                 <div className={styles.sidebarlogo}>
@@ -171,21 +171,16 @@ const Layout = (): React.ReactElement => {
                     <>
                       <img
                         className={styles.userlogo}
-                        alt="GrowthBook"
+                        alt="Shadyy"
                         src={settings.logoPath}
                       />
                     </>
                   ) : (
                     <>
                       <img
-                        className={styles.logo}
-                        alt="GrowthBook"
-                        src="/logo/growth-book-logomark-white.svg"
-                      />
-                      <img
-                        className={styles.logotext}
-                        alt="GrowthBook"
-                        src="/logo/growth-book-name-white.svg"
+                        className={styles.brandLogo}
+                        alt="Shadyy"
+                        src="/logo/shadyy-brand.png"
                       />
                     </>
                   )}
@@ -261,6 +256,7 @@ const Layout = (): React.ReactElement => {
           <a href={inferDocUrl()} target="_blank" rel="noreferrer">
             <WhiteButton variant="outline">View docs</WhiteButton>
           </a>
+          <div className={styles.copyright}>© 2026 Shadyy</div>
         </Flex>
         {build.sha && (
           <div className="px-3 my-1 text-center">
