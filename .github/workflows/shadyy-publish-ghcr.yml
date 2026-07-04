@@ -1,0 +1,99 @@
+name: Publish Shadyy GrowthBook image
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: Image tag to publish
+        required: true
+        default: shadyy-v0.1.1
+      push_latest:
+        description: Also publish latest
+        type: boolean
+        required: true
+        default: true
+      source_ref:
+        description: Source branch, tag, or SHA to build
+        required: true
+        default: custom/shadyy
+      platforms:
+        description: Docker platforms to build
+        required: true
+        default: linux/amd64
+
+env:
+  IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/growthbook
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.source_ref }}
+
+      - name: Check Docker/DHI secrets
+        shell: bash
+        env:
+          DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+          DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+        run: |
+          test -n "$DOCKER_HUB_USERNAME" || { echo "Missing DOCKER_HUB_USERNAME"; exit 1; }
+          test -n "$DOCKER_HUB_ACCESS_TOKEN" || { echo "Missing DOCKER_HUB_ACCESS_TOKEN"; exit 1; }
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Log in to Docker Hardened Images
+        uses: docker/login-action@v4
+        with:
+          registry: dhi.io
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+
+      - name: Prepare build metadata
+        shell: bash
+        run: |
+          mkdir -p buildinfo
+          echo "${GITHUB_SHA}" > buildinfo/SHA
+          printf '%(%Y-%m-%dT%H:%M:%SZ)T' > buildinfo/DATE
+
+      - name: Build tag list
+        id: tags
+        shell: bash
+        run: |
+          TAGS="${IMAGE_NAME}:${{ inputs.image_tag }}"
+          if [ "${{ inputs.push_latest }}" = "true" ]; then
+            TAGS="${TAGS},${IMAGE_NAME}:latest"
+          fi
+          echo "tags=${TAGS}" >> "$GITHUB_OUTPUT"
+
+      - name: Build and push image
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          file: Dockerfile
+          platforms: ${{ inputs.platforms }}
+          build-args: |
+            DD_GIT_COMMIT_SHA=${{ github.sha }}
+            DD_GIT_REPOSITORY_URL=https://github.com/shady-gif/growthbook.git
+            DD_VERSION=${{ inputs.image_tag }}
+          push: true
+          sbom: true
+          provenance: true
+          tags: ${{ steps.tags.outputs.tags }}
